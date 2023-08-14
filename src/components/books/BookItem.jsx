@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import StyledText from '../styled/StyledText.jsx';
 import theme from '../../theme.js';
 
-function abbreviation(name) {
+const abbreviation = (name) => {
     const words = name.toUpperCase().split(' ');
     return words[0][0] + words[1][0];
 }

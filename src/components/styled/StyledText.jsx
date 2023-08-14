@@ -3,19 +3,19 @@ import theme from '../../theme.js';
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 18,
+        fontSize: 14,
         color: '#333',
         fontFamily: theme.fonts.main,
     },
     bold: {
         fontFamily: theme.fonts.title,
-        fontSize: 22,
+        fontSize: 20,
     },
     title: {
         fontFamily: theme.fonts.title,
         fontSize: 30,
         paddingTop: 20,
-        paddingBottom: 10
+        paddingBottom: 10,
     },
     colorPrimary: {
         color: theme.colors.primary
@@ -36,6 +36,7 @@ export default function StyledText({title, children, color, fontSize, align, fon
         color === 'primary' && styles.colorPrimary,
         color === 'secondary' && styles.colorSecondary,
         fontWeight === 'bold' && styles.bold,
+        fontSize,
         style
     ]
 

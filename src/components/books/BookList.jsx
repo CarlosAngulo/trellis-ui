@@ -6,8 +6,7 @@ import BookItem from './BookItem.jsx';
 
 const BookList = () => {
     return (
-    <View
-    style={styles.container}>
+    <View style={styles.container}>
         <FlatList
         data={bookList}
         style={styles.bookList}
@@ -24,7 +23,8 @@ const styles = StyleSheet.create({
         marginTop: Constants.statusBarHeight,
         alignItems: 'center',
         width: '100%',
-        padding: 20
+        paddingLeft: 20,
+        paddingRight: 20
     },
     bookList: {
         width: '100%'
