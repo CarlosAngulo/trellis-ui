@@ -15,7 +15,7 @@ const UploadPDF = ({navigation}) => {
                 <StyledText small align='center' style={{maxWidth: 300}}>Plase select a pdf document from your device to upload an process.</StyledText>
                 <Image style={styles.image} source={require('./upload.png')} />
             </View>
-            <NavigationBar navigation={navigation} />
+            <NavigationBar navigation={navigation} active='Upload PDF' />
         </View>
     )
 };

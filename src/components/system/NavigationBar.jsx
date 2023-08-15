@@ -4,25 +4,39 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import StyledText from '../styled/StyledText';
 import theme from '../../theme';
 
-const NavigationBar = ({ navigation }) => {
+const NavigationBar = ({ navigation, active }) => {
+    const buttonsSetup = [
+        {
+            name: 'Main',
+            iconName: 'headset',
+            text: 'Listen'
+        },
+        {
+            name: 'Upload PDF',
+            iconName: 'add-circle',
+            text: 'Add content'
+        },
+        {
+            name: 'Settings',
+            iconName: 'settings',
+            text: 'Settings'
+        },
+    ];
+
+    const buttons = buttonsSetup.map((button) => 
+        <TouchableOpacity
+            onPress={() => navigation.navigate(button.name)}
+            style={{opacity: active === button.name ? 1 : 0.4}}>
+            <View style={styles.navigationButtons}>
+                <Ionicons name={button.iconName} size={28} color={theme.colors.primary} />
+                <StyledText align='center' style={{fontSize:10}}>{button.text}</StyledText>
+            </View>
+        </TouchableOpacity>
+    )
+
     return (
         <View style={styles.navigationBar}>
-            <TouchableOpacity onPress={() => navigation.navigate('Main')}>
-                <View style={styles.navigationButtons}>
-                    <Ionicons name="headset" size={28} color={theme.colors.primary} />
-                    <StyledText align='center' style={{fontSize:10}}>Listen</StyledText>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Upload PDF')}>
-                <View style={styles.navigationButtons}>
-                    <Ionicons name="add-circle" size={28} color={theme.colors.primary} />
-                    <StyledText align='center' style={{fontSize:10}}>Add content</StyledText>
-                </View>
-            </TouchableOpacity>
-            <View style={styles.navigationButtons}>
-                <Ionicons name="settings" size={28} color={theme.colors.primary} />
-                <StyledText align='center' style={{fontSize:10}}>Settings</StyledText>
-            </View>
+            {buttons}
         </View>
     )
 }

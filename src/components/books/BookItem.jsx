@@ -23,7 +23,7 @@ const BookItem = ({navigation, book}) => {
                     <StyledText>{book.description}</StyledText>
                 </View>
                 <View>
-                    <Ionicons name="play-circle" size={28} color={theme.colors.primary} />
+                    <Ionicons name="play-circle" size={28} color={theme.colors.secondary} />
                 </View>
             </View>
         </TouchableOpacity>

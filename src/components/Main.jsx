@@ -13,14 +13,13 @@ const Main = ({navigation}) => {
                 <StyledText title align={'center'}>Select your book</StyledText>
                 <BookList navigation={navigation}/>
             </View>
-            <NavigationBar navigation={navigation} />
+            <NavigationBar navigation={navigation} active='Main' />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     mainContainer: {
-        marginTop: Constants.statusBarHeight,
         flex: 1,
         backgroundColor: theme.colors.background,
         alignItems: 'center',

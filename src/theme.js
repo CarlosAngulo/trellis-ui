@@ -3,6 +3,7 @@ const theme = {
         textPrimary: '#333',
         textSecondary: '#666',
         primary: 'rgb(34 197 94)',
+        secondary: '#666',
         white: '#FFF',
         background: '#F9F9F9',
     },
