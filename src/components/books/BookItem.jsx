@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import StyledText from '../styled/StyledText.jsx';
 import theme from '../../theme.js';
 
@@ -8,19 +9,24 @@ const abbreviation = (name) => {
     return words[0][0] + words[1][0];
 }
 
-const BookItem = ({book}) => {
+const BookItem = ({navigation, book}) => {
     return (
-        <View style={styles.bookItem}>
-            <View style={styles.bookItemIcon}>
-                <StyledText fontWeight='bold' align="center" style={{color: theme.colors.white}}>
-                    {abbreviation(book.title)}
-                </StyledText>
+        <TouchableOpacity onPress={() => navigation.navigate('Book Chat')}>
+            <View style={styles.bookItem}>
+                <View style={styles.bookItemIcon}>
+                    <StyledText fontWeight='bold' align="center" style={{color: theme.colors.white}}>
+                        {abbreviation(book.title)}
+                    </StyledText>
+                </View>
+                <View style={{flexGrow: 1}}>
+                    <StyledText fontWeight='bold'>{book.title}</StyledText>
+                    <StyledText>{book.description}</StyledText>
+                </View>
+                <View>
+                    <Ionicons name="play-circle" size={28} color={theme.colors.primary} />
+                </View>
             </View>
-            <View>
-                <StyledText fontWeight='bold'>{book.title}</StyledText>
-                <StyledText>{book.description}</StyledText>
-            </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

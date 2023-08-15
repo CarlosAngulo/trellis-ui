@@ -1,7 +1,7 @@
-import Main from './src/components/Main';
 import * as Font from 'expo-font';
 import { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
+import AppNavigator from './AppNavigator';
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -37,6 +37,6 @@ export default function App() {
   }
 
   return (
-    <Main />
+    <AppNavigator />
   );
 }

@@ -4,14 +4,14 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import bookList from '../../data.js';
 import BookItem from './BookItem.jsx';
 
-const BookList = () => {
+const BookList = ({navigation}) => {
     return (
     <View style={styles.container}>
         <FlatList
         data={bookList}
         style={styles.bookList}
         renderItem={({item}) =>
-            <BookItem book={item}/>
+            <BookItem navigation={navigation} book={item}/>
         }
         />
     </View>

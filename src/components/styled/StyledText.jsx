@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 10,
     },
+    small: {
+        fontSize: 12,
+    },
     colorPrimary: {
         color: theme.colors.primary
     },
@@ -28,10 +31,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default function StyledText({title, children, color, fontSize, align, fontWeight, style, ...restOfProps}) {
+export default function StyledText({title, children, color, fontSize, align, fontWeight, style, small, ...restOfProps}) {
     const textStyles = [
         styles.text,
         title && styles.title,
+        small && styles.small,
         align === 'center' && styles.alignCenter,
         color === 'primary' && styles.colorPrimary,
         color === 'secondary' && styles.colorSecondary,

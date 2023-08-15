@@ -1,20 +1,24 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import StyledText from '../styled/StyledText';
 import { Ionicons } from '@expo/vector-icons';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import StyledText from '../styled/StyledText';
 import theme from '../../theme';
 
-const NavigationBar = () => {
+const NavigationBar = ({ navigation }) => {
     return (
         <View style={styles.navigationBar}>
-            <View style={styles.navigationButtons}>
-                <Ionicons name="headset" size={28} color={theme.colors.primary} />
-                <StyledText align='center' style={{fontSize:10}}>Listen</StyledText>
-            </View>
-            <View style={styles.navigationButtons}>
-                <Ionicons name="add-circle" size={28} color={theme.colors.primary} />
-                <StyledText align='center' style={{fontSize:10}}>Add content</StyledText>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+                <View style={styles.navigationButtons}>
+                    <Ionicons name="headset" size={28} color={theme.colors.primary} />
+                    <StyledText align='center' style={{fontSize:10}}>Listen</StyledText>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Upload PDF')}>
+                <View style={styles.navigationButtons}>
+                    <Ionicons name="add-circle" size={28} color={theme.colors.primary} />
+                    <StyledText align='center' style={{fontSize:10}}>Add content</StyledText>
+                </View>
+            </TouchableOpacity>
             <View style={styles.navigationButtons}>
                 <Ionicons name="settings" size={28} color={theme.colors.primary} />
                 <StyledText align='center' style={{fontSize:10}}>Settings</StyledText>

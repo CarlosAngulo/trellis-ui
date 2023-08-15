@@ -6,14 +6,14 @@ import StyledText from './styled/StyledText';
 import theme from '../theme';
 import NavigationBar from './system/NavigationBar';
 
-const Main = () => {
+const Main = ({navigation}) => {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.upperContainer}>
                 <StyledText title align={'center'}>Select your book</StyledText>
-                <BookList/>
+                <BookList navigation={navigation}/>
             </View>
-            <NavigationBar />
+            <NavigationBar navigation={navigation} />
         </View>
     )
 }
